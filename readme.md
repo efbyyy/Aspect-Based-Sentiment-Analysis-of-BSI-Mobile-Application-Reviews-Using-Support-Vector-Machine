@@ -1,81 +1,90 @@
-# Aspect-Based Sentiment Analysis of BSI Mobile Application Reviews using Support Vector Machine
+# Aspect-Based Sentiment Analysis of BSI Mobile Application Reviews Using Support Vector Machine
 
-> _“Understanding what users say about BSI Mobile: from words to sentiment”_
+## 📘 Deskripsi Proyek
 
----
+Proyek ini merupakan implementasi **Aspect-Based Sentiment Analysis (ABSA)** pada ulasan pengguna aplikasi **BSI Mobile**, menggunakan algoritma **Support Vector Machine (SVM)**.  
+Tujuan utamanya adalah mengidentifikasi aspek yang dibahas dalam setiap ulasan dan menentukan **polaritas sentimen** untuk setiap aspek, yaitu:
 
-## 🎓 Project Overview
+- `-1` → Negatif
+- `0` → Netral
+- `1` → Positif
 
-This project conducts an **Aspect-Based Sentiment Analysis (ABSA)** on user reviews of the BSI Mobile application. The task is to identify sentiment toward specific aspects (features) of the app and classify them using a Support Vector Machine (SVM) model.  
-It was developed as part of my undergraduate research in Informatics Engineering.
+Aspek yang dianalisis mencakup:
 
----
-
-## 🔍 Objectives
-
-- Extract user reviews from the BSI Mobile application (data scraping)
-- Preprocess textual data: cleaning, case folding, stop-words removal, tokenization, aspect extraction
-- Build an SVM classifier to predict sentiment for each identified aspect
-- Evaluate and report model performance (precision, recall, F1-score) and provide insights for application improvement
+1. **Layanan (Service)**
+2. **Transaksi (Transaction)**
+3. **Performa Aplikasi (Application Performance)**
+4. **Keamanan (Security)**
 
 ---
 
-## 📁 Repository Structure
+## 🧩 Latar Belakang
+
+Dengan meningkatnya jumlah ulasan pengguna di platform digital, analisis sentimen berbasis aspek membantu memahami persepsi pengguna terhadap fitur tertentu.  
+Metode SVM dipilih karena memiliki performa tinggi untuk klasifikasi teks dan efektif dalam menangani data berdimensi tinggi hasil ekstraksi **TF-IDF (Term Frequency – Inverse Document Frequency)**.
 
 ---
 
-## 🧮 Tech Stack & Tools
+## 🚀 Fitur Utama
 
-- **Python** — pandas, numpy, scikit-learn, NLTK
-- **NLP preprocessing** — tokenization, stop-words removal, aspect extraction
-- **Modelling** — Support Vector Machine (SVM) for classification
-- **Evaluation & Visualisation** — matplotlib, seaborn
-
----
-
-## 📈 Key Results
-
-> _Update this section with your actual numbers after running the model_
-
-| Aspect           | Precision | Recall | F1-Score |
-| ---------------- | --------- | ------ | -------- |
-| Usability        | 0.84      | 0.79   | 0.81     |
-| Performance      | 0.77      | 0.74   | 0.75     |
-| Features         | 0.80      | 0.76   | 0.78     |
-| Security & Trust | 0.69      | 0.65   | 0.67     |
-
-Highlights:
-
-- The SVM model achieved an average F1-score of **~0.77** across all aspects.
-- Users highlighted **performance** and **usability** as the most frequent topics of negative sentiment.
-- Recommendations: Optimize app speed and simplify navigation to improve user satisfaction.
+- Ekstraksi fitur teks menggunakan **TF-IDF**
+- Klasifikasi multi-label menggunakan pendekatan **Binary Relevance**
+- Model pelatihan dan evaluasi dengan **One-vs-Rest SVM**
+- Hyperparameter tuning menggunakan **GridSearchCV**
+- Evaluasi menggunakan **akurasi dan f1-score**
+- Eksperimen tambahan dengan **SMOTE**
 
 ---
 
-## 🧭 How to Run
+## 🧠 Arsitektur Sistem
 
-1. Clone this repository:
+````text
++-----------------------+
+|  Dataset Ulasan BSI   |
++----------+------------+
+           |
+           v
++-----------------------+
+|  Preprocessing Text   |
+|  (Tokenize, Stopword) |
++----------+------------+
+           |
+           v
++-----------------------+
+|  Ekstraksi Fitur TF-IDF |
++----------+------------+
+           |
+           v
++-----------------------+
+|  Klasifikasi SVM BR   |
+|  (Binary Relevance)   |
++----------+------------+
+           |
+           v
++-----------------------+
+|  Hasil Sentimen per   |
+|  Aspek (-1, 0, 1)     |
++-----------------------+
 
-   ```bash
-   git clone https://github.com/efbyyy/Aspect-Based-Sentiment-Analysis-BSI-Mobile-Reviews-SVM.git
-   cd Aspect-Based-Sentiment-Analysis-BSI-Mobile-Reviews-SVM
+## ⚙️ Cara Menjalankan Proyek di Lokal
 
-   ```
-
-2. Create a virtual environment and install dependencies:
+1. Clone Repository
+```bash
+git clone https://github.com/efbyyy/Aspect-Based-Sentiment-Analysis-of-BSI-Mobile-Application-Reviews-Using-Support-Vector-Machine.git
+cd Aspect-Based-Sentiment-Analysis-of-BSI-Mobile-Application-Reviews-Using-Support-Vector-Machine
+2. Buat Virtual Environment
    python -m venv venv
+   source venv/bin/activate   # macOS/Linux
+   # .\venv\Scripts\activate  # Windows
+3. Instal Dependensi
+   Jika tersedia file requirements.txt:
+      pip install -r requirements.txt
+   Jika belum ada, instal manual:
+      pip install scikit-learn pandas numpy joblib openpyxl jupyter imbalanced-learn matplotlib seaborn
+4. Jalankan Notebook
+   jupyter notebook
 
-# Windows
-
-venv\Scripts\activate
-
-# macOS/Linux
-
-source venv/bin/activate
-pip install -r requirements.txt
-
-3. Open and execute the notebooks in this order:
-   01_data_collection.ipynb
-   02_preprocessing.ipynb
-   03_model_training.ipynb
-   04_evaluation.ipynb
+Lalu buka file seperti:
+   notebooks/gambaran umum sistem-Awal.ipynb
+   notebooks/gambaran umum sistem-SMOTE-fold 10.ipynb
+````

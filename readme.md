@@ -74,20 +74,38 @@ Metode SVM dipilih karena memiliki performa tinggi untuk klasifikasi teks dan ef
 ```bash
 git clone https://github.com/efbyyy/Aspect-Based-Sentiment-Analysis-of-BSI-Mobile-Application-Reviews-Using-Support-Vector-Machine.git
 cd Aspect-Based-Sentiment-Analysis-of-BSI-Mobile-Application-Reviews-Using-Support-Vector-Machine
+```
+
 2. Buat Virtual Environment
+
+```bash
    python -m venv venv
    source venv/bin/activate   # macOS/Linux
    # .\venv\Scripts\activate  # Windows
+```
+
 3. Instal Dependensi
    Jika tersedia file requirements.txt:
+
+   ```bash
       pip install -r requirements.txt
+   ```
+
    Jika belum ada, instal manual:
+
+   ```bash
       pip install scikit-learn pandas numpy joblib openpyxl jupyter imbalanced-learn matplotlib seaborn
+   ```
+
 4. Jalankan Notebook
+
+```bash
    jupyter notebook
+```
 
 Lalu buka file seperti:
+
+```bash
    notebooks/gambaran umum sistem-Awal.ipynb
    notebooks/gambaran umum sistem-SMOTE-fold 10.ipynb
-
 ```

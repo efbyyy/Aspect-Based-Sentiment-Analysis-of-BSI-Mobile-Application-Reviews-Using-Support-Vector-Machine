@@ -38,7 +38,7 @@ Metode SVM dipilih karena memiliki performa tinggi untuk klasifikasi teks dan ef
 
 ## 🧠 Arsitektur Sistem
 
-````text
+```text
 +-----------------------+
 |  Dataset Ulasan BSI   |
 +----------+------------+
@@ -65,10 +65,12 @@ Metode SVM dipilih karena memiliki performa tinggi untuk klasifikasi teks dan ef
 |  Hasil Sentimen per   |
 |  Aspek (-1, 0, 1)     |
 +-----------------------+
+```
 
 ## ⚙️ Cara Menjalankan Proyek di Lokal
 
 1. Clone Repository
+
 ```bash
 git clone https://github.com/efbyyy/Aspect-Based-Sentiment-Analysis-of-BSI-Mobile-Application-Reviews-Using-Support-Vector-Machine.git
 cd Aspect-Based-Sentiment-Analysis-of-BSI-Mobile-Application-Reviews-Using-Support-Vector-Machine
@@ -87,4 +89,5 @@ cd Aspect-Based-Sentiment-Analysis-of-BSI-Mobile-Application-Reviews-Using-Suppo
 Lalu buka file seperti:
    notebooks/gambaran umum sistem-Awal.ipynb
    notebooks/gambaran umum sistem-SMOTE-fold 10.ipynb
-````
+
+```

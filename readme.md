@@ -29,7 +29,7 @@ Metode SVM dipilih karena memiliki performa tinggi untuk klasifikasi teks dan ef
 
 - Ekstraksi fitur teks menggunakan **TF-IDF**
 - Klasifikasi multi-label menggunakan pendekatan **Binary Relevance**
-- Model pelatihan dan evaluasi dengan **One-vs-Rest SVM**
+- Model pelatihan dan evaluasi dengan **One-vs-One SVM**
 - Hyperparameter tuning menggunakan **GridSearchCV**
 - Evaluasi menggunakan **akurasi dan f1-score**
 - Eksperimen tambahan dengan **SMOTE**
